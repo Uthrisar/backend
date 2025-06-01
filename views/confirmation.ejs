@@ -1,0 +1,27 @@
+<!-- views/confirmation.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Confirmation</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .confirmation { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+    h1 { color: #4CAF50; }
+    .detail { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="confirmation">
+    <h1>Thank You for Your Purchase!</h1>
+    <div class="detail"><strong>Order ID:</strong> <%= purchase.id %></div>
+    <div class="detail"><strong>Product:</strong> <%= purchase.product %></div>
+    <div class="detail"><strong>Price:</strong> $<%= purchase.price %></div>
+    <div class="detail"><strong>Color:</strong> <%= purchase.variant.color %></div>
+    <div class="detail"><strong>Size:</strong> <%= purchase.variant.size %></div>
+    <div class="detail"><strong>Date:</strong> <%= purchase.date %></div>
+    <div class="detail"><strong>Status:</strong> <span style="color: green;"><%= purchase.status %></span></div>
+  </div>
+</body>
+</html>
