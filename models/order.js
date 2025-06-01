@@ -46,8 +46,20 @@ const orderSchema = new mongoose.Schema({
   },
   paymentMethod: {
     type: String,
-    enum: ['credit_card', 'paypal', 'bank_transfer', 'cash_on_delivery'],
+    enum: ['credit_card', 'paypal', 'bank_transfer', 'cash_on_delivery', 'razorpay'],
     required: true
+  },
+  razorpayPaymentId: {  
+    type: String,
+    default: null
+  },
+  razorpayOrderId: {
+    type: String,
+    default: null
+  },
+  razorpaySignature: {
+    type: String,
+    default: null
   }
 }, {
   timestamps: true // Adds createdAt and updatedAt fields
